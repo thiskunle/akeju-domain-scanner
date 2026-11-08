@@ -1,0 +1,32 @@
+# Copyright (c) 2026 Adekunle Akeju. All rights reserved except as licensed.
+# Akeju Domain Scanner, created by Adekunle Akeju. SPDX-License-Identifier: AGPL-3.0-or-later
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "akeju-domain-scanner"
+version = "0.1.0"
+description = "Plain-English security check for a domain you own, by Adekunle Akeju."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "AGPL-3.0-or-later"
+authors = [{ name = "Adekunle Akeju" }]
+maintainers = [{ name = "Adekunle Akeju" }]
+dependencies = ["dnspython>=2.6"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+akeju-scan = "akeju_scan.cli:main"
+
+[project.urls]
+Author = "https://github.com/thiskunle"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
